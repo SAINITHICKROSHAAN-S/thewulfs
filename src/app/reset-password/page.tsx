@@ -294,7 +294,7 @@ export default function ResetPasswordPage() {
               className="text-sm text-gray-400 hover:text-red-500 transition-colors duration-200 font-inter"
               disabled={isResetting}
             >
-              Didn't receive the code? <span className="font-bold">Request a new one</span>
+              Didn&apos;t receive the code? <span className="font-bold">Request a new one</span>
             </button>
           </div>
 

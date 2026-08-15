@@ -46,7 +46,7 @@ export default function AboutPage() {
             Our Vision
           </h2>
           <p className="text-lg md:text-xl font-inter text-gray-300 leading-relaxed">
-            To build a global pack of untamed individuals. The Wulfs is more than just clothing; it's a culture, a community, and a symbol of exclusivity. We create limited drops that are earned by those who dare to be different. This is our promise: to outfit the fearless, and to lead the way through style and rebellion.
+            To build a global pack of untamed individuals. The Wulfs is more than just clothing; it&apos;s a culture, a community, and a symbol of exclusivity. We create limited drops that are earned by those who dare to be different. This is our promise: to outfit the fearless, and to lead the way through style and rebellion.
           </p>
         </section>
 
@@ -58,7 +58,7 @@ export default function AboutPage() {
             Become a Wulf
           </h2>
           <p className="text-lg md:text-xl font-inter text-gray-300 leading-relaxed mb-8">
-            Joining The Wulfs isn't just about wearing our brand. It's about becoming part of a movement. It's an invitation to a circle of individuals who are loyal, fearless, and always on the hunt.
+            Joining The Wulfs isn&apos;t just about wearing our brand. It&apos;s about becoming part of a movement. It&apos;s an invitation to a circle of individuals who are loyal, fearless, and always on the hunt.
           </p>
           <Link href="/join-the-pack">
             <Button className="w-full sm:w-auto h-12 bg-red-600 hover:bg-red-700 text-white font-montserrat text-lg font-bold uppercase transition-colors duration-300">

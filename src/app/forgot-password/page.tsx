@@ -130,7 +130,7 @@ export default function ForgotPasswordPage() {
               </Link>
             </p>
             <p className="text-gray-400 mt-1">
-              Don't have an account?{" "}
+              Don&apos;t have an account?{" "}
               <Link
                 href="/sign-up"
                 className="text-red-500 hover:underline font-medium"
