@@ -1,4 +1,4 @@
-// src/db/index.ts
+// src/db/index.ts (trigger deployment with env vars)
 import { Pool } from "pg";
 import { drizzle } from "drizzle-orm/node-postgres";
 import { orders, order_items, wishlist, cart_items, products, users } from "./schema";
