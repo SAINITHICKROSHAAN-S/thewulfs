@@ -29,7 +29,10 @@ const clerkAppearance = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <ClerkProvider appearance={clerkAppearance}>
+    <ClerkProvider 
+      publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY || "pk_test_cGF0aWVudC1waWdlb24tOC5jbGVyay5hY2NvdW50cy5kZXYk"} 
+      appearance={clerkAppearance}
+    >
       <html lang="en">
         <body className={inter.className}>
           <RootProviders>
