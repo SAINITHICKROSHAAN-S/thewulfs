@@ -156,7 +156,7 @@ export default function OrdersPage() {
                           Size: {item.size} | Color: {item.color}
                         </p>
                         <p className="text-sm font-inter text-gray-400">
-                          Qty: {item.quantity} × ${item.price.toFixed(2)}
+                          Qty: {item.quantity} × ${parseFloat(item.price).toFixed(2)}
                         </p>
                       </div>
                     </div>
