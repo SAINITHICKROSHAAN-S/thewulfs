@@ -1,0 +1,45 @@
+/* src/app/clerk-custom.css */
+
+/* Target the main container of the Clerk component and limit its size */
+.cl-card {
+    max-height: 80vh !important;
+    width: 100% !important;
+    overflow-y: auto !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+  
+  /* Target the form itself to contain its height */
+  .cl-form {
+    max-height: 50vh !important;
+    overflow-y: auto !important;
+  }
+  
+  /* Hide the divider and social buttons to save vertical space */
+  .cl-dividerRow {
+    display: none !important;
+  }
+  
+  .cl-socialButtons {
+    display: none !important;
+  }
+  
+  /* General component styling for branding */
+  .cl-headerTitle {
+    @apply text-4xl font-anton uppercase font-extrabold text-white;
+  }
+  
+  .cl-headerSubtitle {
+    @apply text-sm text-gray-400 font-inter;
+  }
+  
+  .cl-formFieldInput {
+    @apply pl-10 h-12 bg-gray-800 border-gray-700 text-white placeholder-gray-400 focus:ring-red-600 focus:border-red-600 font-montserrat text-lg;
+  }
+  
+  .cl-formButtonPrimary {
+    @apply w-full h-12 bg-red-600 hover:bg-red-700 text-white font-montserrat text-lg font-bold uppercase transition-colors duration-300;
+  }
+  

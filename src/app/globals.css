@@ -1,26 +1,103 @@
 @import "tailwindcss";
 
+/* * NOTE: Ensure you have linked the following three fonts 
+ * in your app/layout.tsx file using next/font/google.
+ */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* --- 1. PREMIUM COLOR PALETTE (HSL values for better theme control) --- */
+  --color-primary: 350 78% 48%; /* The Wulfs Red (e.g., #DC2626) */
+  --color-accent: 350 78% 38%; /* Darker Red for Hover/Accent (e.g., #B91C1C) */
+
+  /* Inverted Colors for Pure Dark Theme */
+  --background: 0 0% 6%; /* Deep Black/Very Dark Gray (e.g., #0F0F0F) */
+  --foreground: 0 0% 98%; /* Near White (e.g., #FAFAFA) */
+  
+  /* Card/Container Backgrounds & Borders */
+  --card-bg: 0 0% 8%; /* Slightly lighter than background (e.g., #141414) */
+  --card-border: 0 0% 12%; /* Darker border (e.g., #1F2937) */
+  
+  /* Tailwind Default Grays (for compatibility/utility) */
+  --gray-400: 215 14% 65%;
+  --gray-500: 215 14% 55%;
+  --gray-700: 215 14% 35%;
+  --gray-800: 215 14% 20%;
+  --color-black: 0 0% 0%;
+  --color-white: 0 0% 100%;
+
+  /* --- 2. TYPOGRAPHY SYSTEM --- */
+  --font-heading: 'Anton', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-detail: 'Montserrat', sans-serif;
+  
+  /* --- 3. GLOBAL BORDER / RADIUS STANDARDS --- */
+  --radius-sm: 0.5rem;   /* rounded-md (used for smaller elements) */
+  --radius-lg: 0.75rem;  /* rounded-lg/xl (used for cards/containers) */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Base style for dark mode consistency */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* Use the semantic font variables */
+  font-family: var(--font-body);
+  background: hsl(var(--background)) !important;
+  color: hsl(var(--foreground));
+}
+
+/* ------------------------------------------------ */
+/* --- CLERK & GENERAL UI CLEANUP (Consolidated) ---*/
+/* ------------------------------------------------ */
+
+/* Target the main Clerk text elements inside the popover to ensure visibility */
+.cl-userButtonPopoverHeader * {
+  color: #ffffff !important;
+  /* Stroke is handled below, but added here for aggressive compatibility */
+  stroke: #ffffff !important; 
+}
+
+/* Target the user button icon to force white color and fix positioning */
+.cl-userButton {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.cl-userButtonBox, 
+.cl-userButtonAvatarBox {
+  margin: 0 !important; 
+  padding: 0 !important;
+}
+
+/* Force icon colors to white everywhere */
+.cl-userButtonAvatarBox svg,
+.cl-userButton > div > svg,
+.cl-userButtonBox svg {
+  stroke: #ffffff !important;
+  fill: #ffffff !important;
+  color: #ffffff !important;
+}
+
+/* Hides browser password icons */
+input[type="password"]::-webkit-contacts-auto-fill-button,
+input[type="password"]::-webkit-credentials-auto-fill-button {
+  visibility: hidden !important;
+  pointer-events: none !important;
+  height: 0 !important;
+  width: 0 !important;
+  margin: 0 !important;
+}
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none !important;
+}
+
+/* In globals.css or a dedicated CSS module */
+.heart-icon svg {
+  stroke: #ffffff !important; /* Default stroke to white */
+  fill: none !important;      /* Ensure unclicked heart is not filled */
+  transition: stroke 0.3s, fill 0.3s;
+}
+.heart-icon svg.filled {
+  stroke: #DC2626 !important; /* Red stroke when clicked */
+  fill: #DC2626 !important;   /* Red fill when clicked */
 }
